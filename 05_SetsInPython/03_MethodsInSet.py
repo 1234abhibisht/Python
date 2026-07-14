@@ -13,6 +13,13 @@ b2 = {1,2,3}
 res = b1.difference(b2)  # removes elements of b2 from b1
 print(res)  # -> {5,4}
 
+# difference_update - removes element from a set that are also included in another set
+# Note -> difference_update method does not return any set, it transform the original set
+c1 = {"apple", "banana", "cherry"}
+c2 = {"google", "microsoft", "apple"}
+c1.difference_update(c2)  # modifies c1 and insert difference c1-c2 to it
+print(c1)  # -> {"cherry", "banana"}, removes element from c1 that were also present in c2
+
 # .symmetric_difference - returns a set in which common elements from two specific sets are removed
 st1 = {1,2,3,4}
 st2 = {1,5,3,6}
@@ -22,15 +29,8 @@ print(st1.symmetric_difference(st2))  # -> {2,4,5,6}
 # Note -> symmetric_difference_update method does not return any set, it transform the original set
 st3 = {1,2,3,4}
 st4 = {1,5,3,6}
-st3.symmetric_difference_update(st4)
+st3.symmetric_difference_update(st4)  # modifies st3 and insert symmetric difference st3-st4 to it
 print(st3)  # -> {2,4,5,6}
-
-# difference_update - removes element from a set that are also included in another set
-# Note -> difference_update method does not return any set, it transform the original set
-c1 = {"apple", "banana", "cherry"}
-c2 = {"google", "microsoft", "apple"}
-c1.difference_update(c2)
-print(c1)  # -> {"cherry", "banana"}, removes element from c1 that were also present in c2
 
 # .intersection - returns a set which is intersection of two sets
 # Note -> intersection of two sets means common element from both of the set
@@ -42,7 +42,7 @@ print(d1.intersection(d2))  # -> {1,3}
 # Note -> .intersection_update method does not return any set, it transform the original set
 e1 = {"apple", "banana", "cherry"}
 e2 = {"google", "microsoft", "apple"}
-e1.intersection_update(e2)  # removes element from e1 that were not present in e2 
+e1.intersection_update(e2)  # modifies e1 and insert intersection of e1 and e2 to it
 print(e1)  # -> {"apple"}
 
 # .union - returns a set that contains uninon of two specific sets
@@ -54,7 +54,7 @@ print(f1.union(f2))  # -> {1,2,3,4,5,6}
 # Note -> .update method does not return any set, it transform the original set
 st5 = {1,3,4}
 st6 = {2,3,5}
-st5.update(st6)
+st5.update(st6)  # modifies st5 and insert union of st5 and st6 to it
 print(st5)  # -> {1,2,3,4,5}
 
 # .isdisjoint - checks whether two sets are disjoint or not
