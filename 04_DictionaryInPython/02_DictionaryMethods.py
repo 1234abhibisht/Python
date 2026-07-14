@@ -19,8 +19,7 @@ b = {
 print(b.get("name"))
 
 # .keys - return a list containing keys of dictinary
-# Note -> .keys method returns dict_keys() view object instead of actual list because it provides dynamic and memory efficient reference to dictionary's keys
-#         this view object automatically reflects changes to underlying dictionary wihtout creating a static copy which improves performance
+# Note -> .keys method returns output as dict_keys() view object instead of actual list 
 #         the output dict_keys([...]) is the string representation of this view object
 #         to get list output, we need to typecast the output
 d = {
@@ -29,15 +28,15 @@ d = {
     "hobby" : "running"
 }
 print(d.keys())  # return string representation of view object 
-print(list(d.keys()))
+print(list(d.keys()))  # list representaion of output
 
 # .values - return a list containing values of dictinary
-# Note -> .values also give string representation output of view object
+# Note -> .values also give string representation output of dict_values([...]) view object 
 #         to get list output, we need to typecast the output
 print(d.values())
 
 # .items - return a list containing tuple of key:value pairs
-# Note -> .items also give string representation output of view object
+# Note -> .items also give string representation output of dict_items([...]) view object
 #         to get list output, we need to typecast the output
 c = {
     "name" : "abc",
@@ -45,6 +44,11 @@ c = {
     "hobby" : "running"
 }
 print(c.items())  # -> [("name", "abc"), ("age", 12), ("hobby", "running")]
+
+# why dictionary provides output of .keys, .values and .items methods as view object:
+# -> because it provides dynamic and memory efficient reference to dictionary's keys
+# -> this view object automatically reflects changes to underlying dictionary wihtout creating a static copy which improves performance
+# -> In Python 2, these methods returned lists (static copies). If the dictionary changed after the list was created, the list would become outdated, leading to potential inconsistencies.
 
 # .fromkeys - it creates a new dictionary using keys from a given iterable object(list, tuple, set) and give same default values to all
 # Note -> .fromkeys method is used with dict class -> d = dict.fromkeys(iterable object, default value)
