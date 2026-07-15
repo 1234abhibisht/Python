@@ -19,7 +19,7 @@ b = {
 print(b.get("name"))
 
 # .keys - return a list containing keys of dictinary
-# Note -> .keys method returns output as dict_keys() view object instead of actual list 
+# Note -> .keys method returns output as adict_keys() view object instead of actual list 
 #         the output dict_keys([...]) is the string representation of this view object
 #         to get list output, we need to typecast the output
 d = {
@@ -28,7 +28,7 @@ d = {
     "hobby" : "running"
 }
 print(d.keys())  # return string representation of view object 
-print(list(d.keys()))  # list representaion of output
+print(list(d.keys()))  # list representaion of output -> ["abc", 12, "running"]
 
 # .values - return a list containing values of dictinary
 # Note -> .values also give string representation output of dict_values([...]) view object 
@@ -44,6 +44,8 @@ c = {
     "hobby" : "running"
 }
 print(c.items())  # -> [("name", "abc"), ("age", 12), ("hobby", "running")]
+print(c.items()[0])  # -> [("name", "abc")], 0 indexed element of returned list
+print(c.items()[0][0])  # -> "name"
 
 # why dictionary provides output of .keys, .values and .items methods as view object:
 # -> because it provides dynamic and memory efficient reference to dictionary's keys
