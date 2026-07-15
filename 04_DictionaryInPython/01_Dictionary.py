@@ -63,6 +63,18 @@ print(e)
 
 # Note -> we can update a key:value pair or insert new key:value pair using .update method also
 
+# equality condition for two dictionaries
+# two dictionaries are equal only if both have same key:value pairs, order doesn't matter
+dict1 = {
+    "maths" : 91,
+    "physics" : 90,
+}
+dict2 = {
+    "physics" : 90,
+    "maths" : 91,
+}
+print(dict1 == dict2)  # True, as order doesn't matter
+
 # nested dictionary
 f = {
     "name" : "abc",
