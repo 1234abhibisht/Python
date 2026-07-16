@@ -24,6 +24,7 @@ print(a.rindex("a"))  # -> 5
 # .index - returns index of first occurence of an element from left in a string
 # Note -> throws an error if element not found in string
 print(a.index("a"))  # -> 1
+print(a.index("n",2,5))  # searches between index 2 to 5
 
 # .rindex - returns the index of first occurence from right of an element in a string
 # Note -> throws an error if element not found in string

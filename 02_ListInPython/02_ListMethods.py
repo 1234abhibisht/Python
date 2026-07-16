@@ -20,25 +20,27 @@ c2 = c1.copy()
 print(c2)
 
 # .count - returns number of occurances of a value in a list
-# Note - returns 0 if value not found in list
+# Note -> returns 0 if value not found in list
 d = [1,2,3,3,4,5,5]
 print(d.count(3))  # -> 2
 print(d.count(8))  # -> 0, as 8 is not present in list
 
 # .extend - add elements of a list, tuple, set at the end of current list
-# Note - use .extend to add elements of a list to required list instead of append
+# Note -> use .extend to add elements of a list to required list instead of append
 e1 = [1,2,3]
 e2 = [4,5,6]
 e1.append(e2)
 print(e1)  # -> [1,2,3,4,5,6]
 
 # .index - returns index of first occurance of a value from left
-# Note - .index will give error if value not present in list
-f = [1,2,3,2]
-print(f.index(2))  # -> 1
-# Note - in list there is no .rindex method
+# Note -> .index will give error if value not present in list
+f1 = [1,2,3,2]
+print(f1.index(2))  # -> 1
+f2 = ['a','b','c','d','e']
+print(f2.index('c',1,3))  # searches between index 1 to 3
+# Note - in list there is no .rindex method, only strings have .rindex method
 
-# Note - in list there is no .find method
+# Note - in list there is no .find method, only strings have .find method along with .rfind method
 
 # .insert - inserts a value at a specific position
 g1 = [1,2,3,4]
@@ -49,8 +51,9 @@ g2 = [1,2,3,4]
 g2.insert(6,5)  # last index of g2 is 3, but we put argument index 6
 print(g2)  # -> [1,2,3,4,5]
 
-# .remove - removes value from its first occurence from left from a list
-# Note - give actual value as an argument to .remove method
+# .remove - removes value of its first occurence from left from a list
+# Note -> give actual value as an argument to .remove method
+#         .remove will give error if element not found in list
 h = [1,2,3,2,4]
 h.remove(2)
 print(h)  # -> [1,3,2,4]

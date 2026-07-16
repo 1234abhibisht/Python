@@ -101,3 +101,9 @@ dq2 = deque([1,2,3,4,5])
 print(dq2)  # -> deque([1, 2, 3, 4, 5])
 # bounded dequeue - it is a dequeue with fixed size
 dq3 = deque([1,2,3,4,5], maxlen=5)  
+# Note -> if dequeue is size bounded and is completely filled, if we add new element from right then the left most element will be removed automatically
+#         and if we add new element from left then the right most element will be removed automatically
+dq3.append(6)
+print(dq3)  # -> deque([2, 3, 4, 5, 6], maxlen=5), 1 is removed from left end as we add new element from right end
+dq3.appendleft(7)
+print(dq3)  # -> deque([7, 2, 3, 4, 5], maxlen=5), 6 is removed from right end as we add new element from left end
