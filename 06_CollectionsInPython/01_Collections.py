@@ -1,3 +1,5 @@
+# Python’s collections module provides specialized container datatypes that extend the built-in dict, list, tuple, and set types. These tools solve common programming patterns more efficiently and readably
+
 # counter ->
 # counter is a dictionary subclass that store iterable object's elements as keys, count their frequency in object and store them as values
 # Note -> we can pass string, tuple, list, set in Counter subclass
