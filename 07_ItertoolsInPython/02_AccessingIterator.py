@@ -1,6 +1,6 @@
 # itertools functions return iterator, to access this iterator we can use two methods:
 # -> using iter() and next() functions
-# -> typecasting iterator output to a iterable object
+# -> typecasting iterator output to a iterable object like list, tuple etc
 
 # iter() and next() functions are used to manually control iterations in an iterable
 # -> iter() function convert iterables such as list, tuple, set to an iterator object

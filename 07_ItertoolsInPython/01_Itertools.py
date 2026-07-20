@@ -2,7 +2,7 @@
 # Note -> itertools are implemented in c for performance
 #         the code is written in c, its compiled into machine code and called by python functions
 
-# Note -> itertool function returns iterator, to access this iterator we need to use iter() and next() functions or typecase the output to a list,tuple etc
+# Note -> all itertool functions returns iterator, to access these iterators we need to use iter() and next() functions or typecase the output to a list,tuple etc
 
 # product - it is a combinatoric iterator from python itertools module that calculates cartesian product of two iterables
 #           It's essentially a nested loop implemented in C for efficiency, generating all possible combinations by taking one element from each input iterable
@@ -49,3 +49,26 @@ print(list(combinations(b3, 1)))  # -> [(2,), (3,), (1,)]
 # Use Combinations if the order does not matter. If the group remains the same regardless of the sequence in which items were picked, it is a combination.
 # Examples: Selecting a team of players, choosing toppings for a pizza, picking lottery numbers, or selecting committee members without specific titles.
 # Logic: The group {A, B, C} is identical to {C, B, A}
+
+# accumulate - accumulate itertool gives running results of elements of an iterable, it return an iterator
+from itertools import accumulate
+import operator
+c1 = [1,2,3,4,5]
+print(list(accumulate(c1)))  # -> [1,3,6,10,15], logic -> [1, 1+2, 1+2+3, 1+2+3+4, 1+2+3+4+5]
+# Note -> by default accumulate function do running addition(+)
+c2 = [1,2,3,4]
+res_mul = accumulate(c2, func=operator.mul)  # performing running multiplication of elements
+print(list(res_mul))  # -> [1, 2, 6, 24], logic -> [1, 1*2, 1*2*3, 1*2*3*4]
+res_sub = accumulate(c2, func=operator.sub)  # performing running subtraction of elements
+print(list(res_sub))  # -> [1, -1, -4, -8]
+c3 = ['p', 'y', 't', 'h', 'o', 'n']
+res4 = accumulate(c3)
+print(list(res4))  # -> ['p', 'py', 'pyt', 'pyth', 'pytho', 'python'], there will be string concatination in each run
+c4 = [3, 1, 4, 1, 5, 9]
+res5 = accumulate(c4, func=max)
+print(list(res5))  # -> [3, 3, 4, 4, 5, 9], logic -> [3, max(3,1), max(3,1,4), max(3,1,4,1), max(3,1,4,1,5), max3,1,4,1,5,9)]
+c5 = [1,2,3,4]
+res6 = accumulate(c5, initial=100)
+print(list(res6))  # -> [100, 101, 103, 106, 110], logic -> [100, 100+1, 100+1+2, 100+1+2+3, 100+1+2+3+4]
+res = accumulate(c5, initial=10, func=operator.mul)
+print(list(res))  # -> [10, 10, 20, 60, 240], logic -> [10, 10*1, 10*1*2, 10*1*2*3, 10*1*2*3*4]
